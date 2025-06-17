@@ -1,0 +1,23 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-group
+  mail:
+    host: smtp.mail.ru
+    port: 465
+    username: ylym.land@bk.ru
+    password: VwzCHoVe1sjBPjEni37q
+    protocol: smtps
+    properties:
+      mail:
+        smtps:
+          auth: true
+telegram:
+  bot:
+    token: 7768674488:AAHSURPudjTNkeZ_AMup5i16Ix9uOQW26oM
+  chat:
+    id: "781688675"
+
+
+
