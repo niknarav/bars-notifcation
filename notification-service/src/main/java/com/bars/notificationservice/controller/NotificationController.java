@@ -1,6 +1,6 @@
 package com.bars.notificationservice.controller;
 
-import com.bars.notificationservice.event.NotificationEvent;
+import com.bars.notificationservice.kafka.event.NotificationEvent;
 import com.bars.notificationservice.service.NotificationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

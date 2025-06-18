@@ -1,6 +1,6 @@
-package com.bars.notificationservice.consumer;
+package com.bars.notificationservice.kafka.consumer;
 
-import com.bars.notificationservice.event.NotificationEvent;
+import com.bars.notificationservice.kafka.event.NotificationEvent;
 import com.bars.notificationservice.service.NotificationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

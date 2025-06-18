@@ -1,4 +1,4 @@
-package com.bars.notificationservice.event;
+package com.bars.notificationservice.kafka.event;
 
 import lombok.Data;
 

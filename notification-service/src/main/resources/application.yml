@@ -1,6 +1,6 @@
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: kafka-bars:29092
     consumer:
       group-id: notification-group
   mail:
@@ -13,11 +13,21 @@ spring:
       mail:
         smtps:
           auth: true
+
+
+notif:
+  kafka:
+    server: kafka-bars:29092
+
 telegram:
   bot:
     token: 7768674488:AAHSURPudjTNkeZ_AMup5i16Ix9uOQW26oM
   chat:
     id: "781688675"
+
+log:
+  kafka:
+    topic: "logs-topic"
 
 
 

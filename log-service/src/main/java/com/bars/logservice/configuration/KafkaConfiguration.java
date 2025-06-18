@@ -1,7 +1,9 @@
-package com.bars.notificationservice.configuration;
+package com.bars.logservice.configuration;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
@@ -16,16 +18,13 @@ import java.util.Map;
 @Configuration
 public class KafkaConfiguration {
 
-    @Value("${notif.kafka.server}")
-    private String bootstrapServers;
-
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {
         Map<String, Object> props = new HashMap<>();
-        props.put(org.apache.kafka.clients.consumer.ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        props.put(org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG, "notification-group");
-        props.put(org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        props.put(org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        props.put("bootstrap.servers", "kafka-bars:29092");
+        props.put("group.id", "log-group");
+        props.put("key.deserializer", StringDeserializer.class);
+        props.put("value.deserializer", StringDeserializer.class);
         return new DefaultKafkaConsumerFactory<>(props);
     }
 

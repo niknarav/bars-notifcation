@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    bootstrap-servers: kafka-bars:29092
+    consumer:
+      group-id: log-group
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring.json.trusted.packages: com.bars.logservice.model
+  elasticsearch:
+    uris: http://elasticsearch:9200
+    username: elastic
+    password: admin
